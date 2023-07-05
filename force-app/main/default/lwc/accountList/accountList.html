@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <template if:true={accounts.data}>
+            <lightning-datatable    
+                key-field="Id"
+                data={accounts.data}
+                columns={columns}
+            >
+           </lightning-datatable><!--Linhas 4 a 9: definimos o componente básico lightning-datatable para usar 
+            accounts.data e columns que são preenchidos no arquivo JavaScript.-->
+            </template>
+        <template if:true={errors}><!--Se a propriedade errors for verdadeira, o elemento <p>{errors}</p>
+            será exibido-->
+                <p>{errors}</p><!--errors é um getter definido no arquivo JavaScript que usa uma 
+                função auxiliar de c/ldsUtils para reduzir os erros em uma lista de mensagens-->
+            </template>
+    </lightning-card>
+</template>
